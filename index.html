@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shrewsbury High School Dining Room Screen</title>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+}
+
+#slideshow {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+</style>
+</head>
+
+<body>
+
+<img id="slideshow">
+<script>
+const images = [
+    "bg1.jpg",
+    "bg2.jpg",
+    "bg3.jpg",
+    "bg4.jpg",
+ ];
+
+let current = 0;
+document.getElementById("slideshow").src = images[0];
+    
+setInterval(() => {
+    current = (current + 1) % images.length;
+    document.getElementById("slideshow").src = images[current];
+}, 10000);
+
+</script>
+
+</body>
+</html>
